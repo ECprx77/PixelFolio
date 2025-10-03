@@ -33,7 +33,6 @@
 @media (max-width: 640px) {
     .phone-color-red{
         background-color: rgb(220 38 38);
-        padding: 8px 0;
     }
     overflow-x: hidden;
 }
