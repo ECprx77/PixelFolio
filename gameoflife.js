@@ -2,11 +2,13 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const playBtn = document.getElementById('playBtn');
 
-const MARGIN = 40;
+const MARGIN = window.innerWidth < 640 ? 20 : 40;
 const availableWidth = window.innerWidth - MARGIN;
 const availableHeight = window.innerHeight - MARGIN;
 
-const CELL_SIZE = Math.floor(Math.min(availableWidth / 200, availableHeight / 200));
+const minCellSize = window.innerWidth < 640 ? 1 : 2;
+const maxCells = window.innerWidth < 640 ? 150 : 200;
+const CELL_SIZE = Math.max(minCellSize, Math.floor(Math.min(availableWidth / maxCells, availableHeight / maxCells)));
 const GRID_WIDTH = Math.floor(availableWidth / CELL_SIZE);
 const GRID_HEIGHT = Math.floor(availableHeight / CELL_SIZE);
 
@@ -410,13 +412,40 @@ canvas.addEventListener('mouseleave', () => {
     isDrawing = false;
 });
 
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    if (!isRunning && hasStarted) {
+        isDrawing = true;
+        const touch = e.touches[0];
+        const pos = getMousePos(touch);
+        drawCell(pos.x, pos.y);
+    }
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (isDrawing && !isRunning && hasStarted) {
+        const touch = e.touches[0];
+        const pos = getMousePos(touch);
+        drawCell(pos.x, pos.y);
+    }
+});
+
+canvas.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    isDrawing = false;
+});
+
 function resizeCanvas() {
     if (!hasStarted) return;
     
-    const newAvailableWidth = window.innerWidth - MARGIN;
-    const newAvailableHeight = window.innerHeight - MARGIN;
+    const newMargin = window.innerWidth < 640 ? 20 : 40;
+    const newAvailableWidth = window.innerWidth - newMargin;
+    const newAvailableHeight = window.innerHeight - newMargin;
     
-    const newCellSize = Math.floor(Math.min(newAvailableWidth / 80, newAvailableHeight / 50));
+    const minCells = window.innerWidth < 640 ? 60 : 80;
+    const maxCells = window.innerWidth < 640 ? 40 : 50;
+    const newCellSize = Math.floor(Math.min(newAvailableWidth / minCells, newAvailableHeight / maxCells));
     const newGridWidth = Math.floor(newAvailableWidth / newCellSize);
     const newGridHeight = Math.floor(newAvailableHeight / newCellSize);
     
