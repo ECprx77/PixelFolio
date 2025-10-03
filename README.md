@@ -92,7 +92,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🎯 Live Demo
 
-Visit the live portfolio: [Your Portfolio URL]
+Visit the live portfolio: [link](https://ecprx77.github.io/PixelFolio/index.html)
 
 ---
 
