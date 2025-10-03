@@ -32,7 +32,8 @@
 
 @media (max-width: 640px) {
     .phone-color-red{
-        color: rgb(220 38 38);
+        background-color: rgb(220 38 38);
+        padding: 8px 0;
     }
 }
 .pixel-play-btn:hover {
