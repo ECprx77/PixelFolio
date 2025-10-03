@@ -29,6 +29,12 @@
         height: 70px;
     }
 }
+
+@media (max-width: 640px) {
+    .phone-color-red{
+        color: rgb(220 38 38);
+    }
+}
 .pixel-play-btn:hover {
     opacity: 0.8;
 }
