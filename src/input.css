@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.micro-5 {
+    font-family: 'Micro 5', sans-serif;
+    letter-spacing: 0.2em;
+}
+.pixel-play-btn {
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    bottom: 35px;
+    left: 35px;
+    width: 70px;
+    height: 70;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    z-index: 1000;
+}
+.pixel-play-btn:hover {
+    opacity: 0.8;
+}
+
+/* Navigation Buttons */
+.pixel-nav-btn {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Card Components */
+.pixel-card {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    transition: all 0.3s ease;
+}
+
+/* Text Elements */
+.pixel-text {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Tags and Labels */
+.pixel-tag {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    border: 1px solid currentColor;
+}
+
+/* Contact Buttons */
+.pixel-contact-btn {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Large Action Button */
+.pixel-play-btn-large {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
