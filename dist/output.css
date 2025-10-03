@@ -1028,8 +1028,17 @@ video {
     width: 70px;
     height: 70px;
   }
+}
+
+@media (max-width: 640px) {
   .phone-color-red{
     background-color: rgb(220 38 38);
+    padding: 8px 1rem;
+    margin: 0 -1rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
